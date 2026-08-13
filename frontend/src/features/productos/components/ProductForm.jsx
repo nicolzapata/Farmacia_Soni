@@ -66,7 +66,7 @@ const ProductForm = ({ initialData, onSubmit, onCancel }) => {
           <input
             {...register('nombre')}
             type="text"
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500"
           />
           {errors.nombre && (
             <p className="text-sm text-red-600 mt-1">{errors.nombre.message}</p>
@@ -80,7 +80,7 @@ const ProductForm = ({ initialData, onSubmit, onCancel }) => {
           <input
             {...register('codigo_barras')}
             type="text"
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500"
           />
           {errors.codigo_barras && (
             <p className="text-sm text-red-600 mt-1">{errors.codigo_barras.message}</p>
@@ -95,7 +95,7 @@ const ProductForm = ({ initialData, onSubmit, onCancel }) => {
             {...register('precio')}
             type="number"
             step="0.01"
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500"
           />
           {errors.precio && (
             <p className="text-sm text-red-600 mt-1">{errors.precio.message}</p>
@@ -109,7 +109,7 @@ const ProductForm = ({ initialData, onSubmit, onCancel }) => {
           <input
             {...register('stock')}
             type="number"
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500"
           />
           {errors.stock && (
             <p className="text-sm text-red-600 mt-1">{errors.stock.message}</p>
@@ -122,7 +122,7 @@ const ProductForm = ({ initialData, onSubmit, onCancel }) => {
           </label>
           <select
             {...register('categoria_id')}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500"
           >
             <option value="">Sin categoría</option>
             {categorias.map(cat => (
@@ -143,7 +143,7 @@ const ProductForm = ({ initialData, onSubmit, onCancel }) => {
           <input
             {...register('fecha_vencimiento')}
             type="date"
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500"
           />
           {errors.fecha_vencimiento && (
             <p className="text-sm text-red-600 mt-1">{errors.fecha_vencimiento.message}</p>
@@ -158,7 +158,7 @@ const ProductForm = ({ initialData, onSubmit, onCancel }) => {
         <textarea
           {...register('descripcion')}
           rows="3"
-          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500"
         />
         {errors.descripcion && (
           <p className="text-sm text-red-600 mt-1">{errors.descripcion.message}</p>
@@ -176,7 +176,7 @@ const ProductForm = ({ initialData, onSubmit, onCancel }) => {
         <button
           type="submit"
           disabled={loading}
-          className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition disabled:opacity-50"
+          className="px-4 py-2 bg-primary-600 text-white rounded-md hover:bg-primary-700 transition disabled:opacity-50"
         >
           {loading ? 'Guardando...' : initialData ? 'Actualizar' : 'Crear'}
         </button>

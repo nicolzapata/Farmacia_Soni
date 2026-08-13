@@ -1,13 +1,13 @@
 import React from 'react';
-import { Package, Users, DollarSign, ShoppingCart, TrendingUp, TrendingDown } from 'lucide-react';
+import { Tablets, Users, DollarSign, Receipt, TrendingUp, TrendingDown } from 'lucide-react';
 
 const DashboardCards = ({ data }) => {
   const cards = [
-    { 
-      icon: Package, 
+    {
+      icon: Tablets,
       label: 'Total Productos', 
       value: data.totalProductos || 0, 
-      color: 'bg-blue-500',
+      color: 'bg-primary-500',
       change: '+12%',
       trend: 'up'
     },
@@ -28,7 +28,7 @@ const DashboardCards = ({ data }) => {
       trend: 'up'
     },
     { 
-      icon: ShoppingCart, 
+      icon: Receipt,
       label: 'Total Ventas', 
       value: data.totalVentas || 0, 
       color: 'bg-purple-500',

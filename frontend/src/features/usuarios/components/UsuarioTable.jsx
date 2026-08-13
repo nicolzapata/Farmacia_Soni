@@ -59,7 +59,7 @@ const UsuarioTable = ({ usuarios, currentUserId, onEdit, onDelete }) => {
                       <div className="text-sm font-medium text-gray-900">
                         {usuario.nombre}
                         {usuario.id === currentUserId && (
-                          <span className="ml-2 text-xs bg-blue-100 text-blue-800 px-2 py-0.5 rounded-full">
+                          <span className="ml-2 text-xs bg-primary-100 text-primary-800 px-2 py-0.5 rounded-full">
                             Tú
                           </span>
                         )}

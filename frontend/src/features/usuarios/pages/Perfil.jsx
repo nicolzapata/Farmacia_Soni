@@ -26,7 +26,7 @@ const Perfil = () => {
   if (loading) {
     return (
       <div className="flex justify-center items-center h-64">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600"></div>
       </div>
     );
   }
@@ -34,14 +34,14 @@ const Perfil = () => {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-        <div className="bg-gradient-to-r from-blue-500 to-indigo-600 px-6 py-8">
+        <div className="bg-gradient-to-r from-primary-500 to-indigo-600 px-6 py-8">
           <div className="flex items-center">
             <div className="bg-white rounded-full p-3">
-              <User className="h-12 w-12 text-blue-600" />
+              <User className="h-12 w-12 text-primary-600" />
             </div>
             <div className="ml-4">
               <h1 className="text-2xl font-bold text-white">{perfil?.nombre}</h1>
-              <p className="text-blue-100">Mi Perfil</p>
+              <p className="text-primary-100">Mi Perfil</p>
             </div>
           </div>
         </div>
@@ -98,9 +98,9 @@ const Perfil = () => {
           <div className="border-t pt-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">Estadísticas</h3>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              <div className="bg-blue-50 p-4 rounded-lg">
-                <p className="text-sm text-blue-600">Rol</p>
-                <p className="text-lg font-bold text-blue-900">
+              <div className="bg-primary-50 p-4 rounded-lg">
+                <p className="text-sm text-primary-600">Rol</p>
+                <p className="text-lg font-bold text-primary-900">
                   {perfil?.rol === 'admin' ? 'Administrador' : 'Usuario'}
                 </p>
               </div>

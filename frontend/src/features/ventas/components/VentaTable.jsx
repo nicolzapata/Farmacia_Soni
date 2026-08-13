@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Eye, ShoppingCart, Calendar, User, CreditCard, DollarSign, Package, X } from 'lucide-react';
+import { Eye, Receipt, Calendar, User, CreditCard, DollarSign, Tablets, X } from 'lucide-react';
 import { format } from 'date-fns';
 import { es } from 'date-fns/locale';
 
@@ -20,7 +20,7 @@ const VentaTable = ({ ventas, getVentaDetalle }) => {
   if (ventas.length === 0) {
     return (
       <div className="bg-white rounded-lg shadow-md p-8 text-center">
-        <ShoppingCart className="mx-auto h-12 w-12 text-gray-400" />
+        <Receipt className="mx-auto h-12 w-12 text-gray-400" />
         <h3 className="mt-2 text-sm font-medium text-gray-900">No hay ventas</h3>
         <p className="mt-1 text-sm text-gray-500">
           Comienza registrando una nueva venta.
@@ -70,7 +70,7 @@ const VentaTable = ({ ventas, getVentaDetalle }) => {
                 <td className="px-6 py-4 whitespace-nowrap">
                   <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
                     venta.metodo_pago === 'efectivo' ? 'bg-green-100 text-green-800' :
-                    venta.metodo_pago === 'tarjeta' ? 'bg-blue-100 text-blue-800' :
+                    venta.metodo_pago === 'tarjeta' ? 'bg-primary-100 text-primary-800' :
                     'bg-purple-100 text-purple-800'
                   }`}>
                     {venta.metodo_pago || 'N/A'}
@@ -83,10 +83,10 @@ const VentaTable = ({ ventas, getVentaDetalle }) => {
                   <button
                     onClick={() => handleVerDetalle(venta)}
                     disabled={loadingDetalle}
-                    className="text-blue-600 hover:text-blue-900 transition disabled:opacity-50"
+                    className="text-primary-600 hover:text-primary-900 transition disabled:opacity-50"
                   >
                     {loadingDetalle ? (
-                      <div className="animate-spin h-5 w-5 border-b-2 border-blue-600 rounded-full"></div>
+                      <div className="animate-spin h-5 w-5 border-b-2 border-primary-600 rounded-full"></div>
                     ) : (
                       <Eye size={18} />
                     )}
@@ -103,10 +103,10 @@ const VentaTable = ({ ventas, getVentaDetalle }) => {
         <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4 backdrop-blur-sm">
           <div className="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col animate-in fade-in zoom-in duration-300">
             {/* Header del Modal */}
-            <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-8 py-6 flex justify-between items-center">
+            <div className="bg-gradient-to-r from-primary-600 to-primary-700 px-8 py-6 flex justify-between items-center">
               <div className="flex items-center gap-3">
                 <div className="bg-white/20 p-2 rounded-lg">
-                  <ShoppingCart className="text-white" size={24} />
+                  <Receipt className="text-white" size={24} />
                 </div>
                 <h2 className="text-2xl font-bold text-white">Detalle de Venta #{selectedVenta.id}</h2>
               </div>
@@ -122,10 +122,10 @@ const VentaTable = ({ ventas, getVentaDetalle }) => {
             <div className="flex-1 overflow-y-auto p-8">
               {/* Tarjetas de información */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                <div className="bg-blue-50 border border-blue-100 rounded-xl p-5">
+                <div className="bg-primary-50 border border-primary-100 rounded-xl p-5">
                   <div className="flex items-center gap-3 mb-2">
-                    <Calendar className="text-blue-600" size={20} />
-                    <p className="text-sm text-blue-700 font-medium">Fecha</p>
+                    <Calendar className="text-primary-600" size={20} />
+                    <p className="text-sm text-primary-700 font-medium">Fecha</p>
                   </div>
                   <p className="text-lg font-semibold text-gray-900">
                     {format(new Date(selectedVenta.fecha), "d 'de' MMMM", { locale: es })}
@@ -163,7 +163,7 @@ const VentaTable = ({ ventas, getVentaDetalle }) => {
               {/* Lista de Productos */}
               <div>
                 <div className="flex items-center gap-3 mb-4">
-                  <Package className="text-gray-700" size={20} />
+                  <Tablets className="text-gray-700" size={20} />
                   <h3 className="text-xl font-bold text-gray-900">Productos</h3>
                 </div>
                 
@@ -183,7 +183,7 @@ const VentaTable = ({ ventas, getVentaDetalle }) => {
                             <p className="font-medium text-gray-900">{detalle.producto_nombre || `Producto ${detalle.producto_id}`}</p>
                           </div>
                           <div className="col-span-2 text-center">
-                            <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">
+                            <span className="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-semibold">
                               {Number(detalle.cantidad)}
                             </span>
                           </div>
@@ -198,7 +198,7 @@ const VentaTable = ({ ventas, getVentaDetalle }) => {
                     </div>
                   ) : (
                     <div className="px-6 py-8 text-center">
-                      <Package className="mx-auto h-12 w-12 text-gray-300 mb-3" />
+                      <Tablets className="mx-auto h-12 w-12 text-gray-300 mb-3" />
                       <p className="text-gray-500">No hay detalles disponibles</p>
                     </div>
                   )}

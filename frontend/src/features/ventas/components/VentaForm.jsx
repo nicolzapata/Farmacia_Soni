@@ -114,7 +114,7 @@ const VentaForm = ({ onSubmit, onCancel }) => {
           <button
             type="button"
             onClick={() => append({ producto_id: '', cantidad: 1 })}
-            className="text-sm text-blue-600 hover:text-blue-800 flex items-center"
+            className="text-sm text-primary-600 hover:text-primary-800 flex items-center"
           >
             <Plus size={16} className="mr-1" />
             Agregar Producto

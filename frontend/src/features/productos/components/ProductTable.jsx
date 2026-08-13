@@ -1,11 +1,11 @@
 import React from 'react';
-import { Edit, Trash2, Package } from 'lucide-react';
+import { Edit, Trash2, Tablets } from 'lucide-react';
 
 const ProductTable = ({ productos, onEdit, onDelete }) => {
   if (productos.length === 0) {
     return (
       <div className="bg-white rounded-lg shadow-md p-8 text-center">
-        <Package className="mx-auto h-12 w-12 text-gray-400" />
+        <Tablets className="mx-auto h-12 w-12 text-gray-400" />
         <h3 className="mt-2 text-sm font-medium text-gray-900">No hay productos</h3>
         <p className="mt-1 text-sm text-gray-500">
           Comienza agregando un nuevo producto.
@@ -51,8 +51,8 @@ const ProductTable = ({ productos, onEdit, onDelete }) => {
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
                   <div className="flex items-center">
-                    <div className="flex-shrink-0 h-10 w-10 bg-blue-100 rounded-full flex items-center justify-center">
-                      <Package className="h-5 w-5 text-blue-600" />
+                    <div className="flex-shrink-0 h-10 w-10 bg-primary-100 rounded-full flex items-center justify-center">
+                      <Tablets className="h-5 w-5 text-primary-600" />
                     </div>
                     <div className="ml-4">
                       <div className="text-sm font-medium text-gray-900">
@@ -91,7 +91,7 @@ const ProductTable = ({ productos, onEdit, onDelete }) => {
                 <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                   <button
                     onClick={() => onEdit(producto)}
-                    className="text-blue-600 hover:text-blue-900 mr-3 transition"
+                    className="text-primary-600 hover:text-primary-900 mr-3 transition"
                   >
                     <Edit size={18} />
                   </button>
